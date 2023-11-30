@@ -4,6 +4,8 @@ def verify (verb:str):
 
   if any(verb.endswith(i) for i in past_simple):
       return "Past Simple"
+  elif (verb.__contains__('going to')):
+      return "Future Simple"
   elif verb.endswith('ing'):
       return "Present Continous"
   elif any(verb.startswith(i) for i in past_perfect):
