@@ -5,8 +5,8 @@ def verify (verb:str):
   future_continous = ['will', 'be']
   future_perfect = ['will', 'have']
 
-  if any(verb.endswith(i) for i in past_simple):
-      return "Past Simple"
+  if (verb.__contains__(i) for i in future_perfect):
+      return "Future Perfect"
   elif (verb.__contains__('going to')):
       return "Future Simple"
   elif any(verb.__contains__(i) for i in past_continous) and (verb.endswith('ing')):
@@ -19,8 +19,8 @@ def verify (verb:str):
       return "Past Perfect"
   elif verb.__contains__('have'):
       return "Present Perfect"
-  elif (verb.__contains__(i) for i in future_perfect):
-      return "Future Perfect"
+  elif any(verb.endswith(i) for i in past_simple):
+      return "Past Simple"
   else:
       return None
 
